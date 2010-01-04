@@ -14,6 +14,8 @@ class AccountsController < ApplicationController
     end
   end
   
+  if false # deactivate creation of users
+  
   def new
     @account = Account.new
   end
@@ -29,6 +31,8 @@ class AccountsController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  end # end deactivation
 
   def edit
     @account = current_account
@@ -66,7 +70,7 @@ class AccountsController < ApplicationController
       redirect_to login_path
     rescue ArgumentError, Account::ActivationCodeNotFound
       flash[:error] = t(:couldnt_find_account_with_code_create_new_one)
-      redirect_to new_account_path
+      redirect_to root_path
     rescue Account::AlreadyActivated
       flash[:error] = t(:account_already_activated_please_login)
       redirect_to login_path

@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resource :account,
+    :except => [:new, :create], # deactivate creation of users
     :member => { :activate => :get, :password => :get, :change_password => :put } do |account|
     account.resources :personas do |personas|
       personas.resources :properties

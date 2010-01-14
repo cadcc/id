@@ -1,0 +1,13 @@
+---
+base: &base
+  SESSION_SECRET: replacethiswithyourowntopsecretsessionsecretsothatnoonewillknowit
+	YOUBICO_API_KEY: youryubicoapikey
+ 
+development:
+  <<: *base
+ 
+test:
+  <<: *base
+ 
+production:
+  <<: *base

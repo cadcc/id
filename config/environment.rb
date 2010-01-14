@@ -4,6 +4,8 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+require 'config_loader'
+
 # Load custom config file for current environment
 require 'yaml'
 APP_CONFIG = YAML.load(File.read(RAILS_ROOT + "/config/app_config.yml"))[RAILS_ENV]
@@ -18,6 +20,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = APP_CONFIG['session']
+  config.action_controller.session[:secret] = ENV['SESSION_SECRET'] if ENV['SESSION_SECRET']
   
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
@@ -25,15 +28,16 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   
   # Mailer
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => APP_CONFIG['mailer']['address'],
-    :domain => APP_CONFIG['mailer']['domain'],
-    :port => APP_CONFIG['mailer']['port'],
-    :user_name => APP_CONFIG['mailer']['user_name'],
-    :password => APP_CONFIG['mailer']['password'],
-    :authentication => APP_CONFIG['mailer']['authentication'] }
-  
+  if APP_CONFIG['mailer']
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address => APP_CONFIG['mailer']['address'],
+      :domain => APP_CONFIG['mailer']['domain'],
+      :port => APP_CONFIG['mailer']['port'],
+      :user_name => APP_CONFIG['mailer']['user_name'],
+      :password => APP_CONFIG['mailer']['password'],
+      :authentication => APP_CONFIG['mailer']['authentication'] }
+  end
   # Timezone
   config.time_zone = APP_CONFIG['time_zone'] || 'UTC'
   
@@ -41,5 +45,5 @@ Rails::Initializer.run do |config|
   config.gem 'ruby-openid', :lib => 'openid'
   config.gem 'ruby-yadis', :lib => 'yadis'
   config.gem 'mocha'
-  
+
 end

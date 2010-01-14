@@ -1,0 +1,26 @@
+--- 
+default: &default
+  name: CaDCC ID
+  host: id.cadcc.cl
+  use_ssl: false
+  locale: es
+  time_zone: Santiago
+  email: cadcc@cadcc.cl
+  session:
+    session_key: cadccid_session_id
+    secret: replacethiswithyourowntopsecretsessionsecretsothatnoonewillknowit
+  yubico:
+    id: 99
+    api_key: youryubicoapikey
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+  use_ssl: true
+  ssl_certificate_common_name: *.heroku.com
+  ssl_certificate_sha1: D2:1B:D8:C4:39:B7:EE:10:DA:E2:4E:0A:65:98:8E:27:C9:32:4B:F0

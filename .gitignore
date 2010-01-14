@@ -4,7 +4,7 @@
 Thumbs.db
 log/*.log
 Capfile
-config/app_config.yml
+config/config.yml
 config/database.yml
 config/deploy.rb
 config/mongrel_cluster.yml

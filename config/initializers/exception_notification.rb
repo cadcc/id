@@ -1,5 +1,5 @@
 ExceptionNotifier.exception_recipients = [APP_CONFIG['email']]
-ExceptionNotifier.sender_address = %("#{APP_CONFIG['name']}" <#{APP_CONFIG['mailer']['from']}>)
+ExceptionNotifier.sender_address = %("#{APP_CONFIG['name']}" <#{APP_CONFIG['email']}>)
 ExceptionNotifier.email_prefix = "[#{APP_CONFIG['name']} Error] "
 
 # Email notifications will only occur when the IP address is determined not to

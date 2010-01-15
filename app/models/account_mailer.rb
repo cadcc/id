@@ -15,7 +15,7 @@ class AccountMailer < ActionMailer::Base
   protected
   
   def setup_email(account)
-    @from           = APP_CONFIG['mailer']['from']
+    @from           = APP_CONFIG['email']
     @recipients     = account.email
     @sent_on        = Time.now
     @body[:account] = account

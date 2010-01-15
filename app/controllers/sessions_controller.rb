@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  include SslRequirement
+  
+  ssl_required :new, :create
   
   before_filter :login_required, :only => :destroy
   after_filter :set_login_cookie, :only => :create

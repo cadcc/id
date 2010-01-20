@@ -14,9 +14,9 @@
  <div class="adr">
   <div class="street-address"><%= persona.address %></div>
   <span class="locality"><%= persona.city %></span>
-, 
+<%= ',' if persona.city? %>
   <span class="region"><%= persona.state %></span>
-, 
+<%= ',' if persona.state? %>
   <span class="postal-code"><%= persona.postcode %></span>
 
   <span class="country-name"><%= persona.country %></span>

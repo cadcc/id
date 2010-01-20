@@ -33,7 +33,7 @@ module ApplicationHelper
   # Renders a navigation element and marks it as active where
   # appropriate. See active_page? for details
   def nav(name, url, pages = nil, active = false)
-    content_tag :li, link_to(name, url), :class => (active || (pages && active_page?(pages)) ? 'act' : nil)
+    content_tag :li, link_to(name, url), :class => (active || (pages && active_page?(pages)) ? 'current_page_item' : nil)
   end
   
   # Takes a hash with pages and tells whether the current page is among them.

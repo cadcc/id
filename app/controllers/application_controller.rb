@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_locale
   
+  layout 'cadcc'
+  
   protected
   
   # before_filter for every account-based controller

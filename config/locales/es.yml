@@ -18,7 +18,11 @@ es:
   # account views
   public_persona: Persona pública
   forgot_password_create_new_one: ¿Olvidate tu clave? Aquí puedes crear una nueva
-  account_created_but_not_activated_yet: "Tu cuenta OpenID a sido creada, pero no ha sido activada todavía."
+  account_created_but_not_activated_yet:
+    "Tu Cuenta CaDCC ID ha sido creada, pero necesita ser activada por ti.
+    
+         User: {{user}}
+         Password: {{password}}"
   please_activate_it_by_clicking_the_following_link: Por favor activala usando el siguiente enlace
   my_profile: Mi perfil
   login: Usuario

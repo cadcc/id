@@ -20,10 +20,9 @@ en:
   forgot_password_create_new_one: You forgot your password? Here you can create a new one
   account_created_but_not_activated_yet: 
     "Your CaDCC ID Account has been created, but needs to be activated by you.
-      <ul>
-        <li>User: {{user}}</li>
-        <li>Password: {{password}}</li>
-      </ul>"
+    
+        User: {{user}}
+        Password: {{password}}"
   please_activate_it_by_clicking_the_following_link: Please activate it by clicking the following link
   my_profile: My profile
   login: Login

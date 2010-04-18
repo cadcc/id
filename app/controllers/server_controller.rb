@@ -201,7 +201,7 @@ class ServerController < ApplicationController
   # Renders the exception message as text output
   def render_openid_error(exception)
     error = case exception
-    when OpenID::Server::MalformedTrustRoot: "Malformed trust root '#{exception.to_s}'"
+    when OpenID::Server::MalformedTrustRoot then "Malformed trust root '#{exception.to_s}'"
     else exception.to_s
     end
     render :text => "Invalid OpenID request: #{error}", :status => 500

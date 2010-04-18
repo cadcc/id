@@ -1,3 +1,4 @@
+# encoding:  UTF-8
 class CreateInitialSchema < ActiveRecord::Migration
   def self.up
     create_table :accounts, :force => true do |t|

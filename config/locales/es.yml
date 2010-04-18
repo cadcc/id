@@ -172,6 +172,7 @@ es:
   website_url: URL Sitio Web
   blog_url: URL Blog
   dob: Fecha de nacimiento
+  date_of_birth: Fecha de nacimiento
 
   my_personas_title: Mis personas
   personas_intro: 
@@ -205,10 +206,12 @@ es:
 
   # server views
   identity_request_from_host: "Petición de identidad de {{host}}"
+  identity_request_missing_persona: Por favor {{create_link}}.
   trust_root_requests_some_personal_data: "{{trust_root}} pidió algunos datos personales."
   select_information_to_submit: Por favor selecciona la información que deseas enviar.
   attributes_are_shown_from_persona: "Los atributos mostrados son de la persona {{persona}}."
   to_submit_other_values_you_can_edit_or_choose: "Para enviar otros valores puedes {{edit_link}} o {{choose_link}}."
+  create_persona_link: crear una persona
   edit_persona_link: editar la persona
   choose_other_persona: elegir otra persona
   trust_root_requires_authentication: "{{trust_root} requiere tu autenticación."
@@ -217,6 +220,9 @@ es:
   create_new_persona_link: crear una nueva persona
   requested_information_title: Información pédida
   disclosure: liberar
+  required: required
+  optional: optional
+  not_supported: not supported
   trust_site_only_this_time: Confiar en este sitio solo esta vez
   always_trust_site: Siempre confiar en este sitio
   approve_request: Aprovar esta petición
